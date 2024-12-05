@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
 
-public class A5 {
+public class A5B {
 
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("assets/input5.txt");
