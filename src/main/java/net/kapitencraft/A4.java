@@ -1,13 +1,9 @@
 package net.kapitencraft;
 
-import javax.print.attribute.standard.MediaSize;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class A4 {
     private static final char[] OTHER = {'M', 'A', 'S'};
