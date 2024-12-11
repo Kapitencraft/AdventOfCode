@@ -3,7 +3,6 @@ package net.kapitencraft;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
-import javax.sound.sampled.Line;
 import java.io.*;
 import java.util.*;
 
@@ -167,30 +166,29 @@ public class A6B {
     }
 
     private record Line(Vec2 p1, Vec2 p2, int index) {
-            private Line(Vec2 p1, Vec2 p2, int index) {
-                this.p1 = p1.copy();
-                this.p2 = p2.copy();
-                this.index = index;
-            }
+        private Line(Vec2 p1, Vec2 p2, int index) {
+            this.p1 = p1.copy();
+            this.p2 = p2.copy();
+            this.index = index;
+        }
 
-            boolean isVertical() {
+        boolean isVertical() {
                 return p1.x == p2.x;
             }
 
-            boolean isHorizontal() {
+        boolean isHorizontal() {
                 return p1.y == p2.y;
             }
 
-            boolean inside(Vec2 pos) {
-                if (isVertical()) return pos.x == p1.x && (p1.y < p2.y ?
-                        pos.y >= p1.y && pos.y <= p2.y :
-                        pos.y >= p2.y && pos.y <= p2.x);
-                else return pos.y == p1.y && (p1.x < p2.x ?
-                        pos.x >= p1.x && pos.x <= p2.x :
-                        pos.x >= p2.x && pos.x <= p2.x);
-
-            }
+        boolean inside(Vec2 pos) {
+            if (isVertical()) return pos.x == p1.x && (p1.y < p2.y ?
+                    pos.y >= p1.y && pos.y <= p2.y :
+                    pos.y >= p2.y && pos.y <= p2.x);
+            else return pos.y == p1.y && (p1.x < p2.x ?
+                    pos.x >= p1.x && pos.x <= p2.x :
+                    pos.x >= p2.x && pos.x <= p2.x);
         }
+    }
 
     private static final class Vec2 {
         private int x, y;
